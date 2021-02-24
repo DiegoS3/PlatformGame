@@ -252,9 +252,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3744716212859607906}
+  - component: {fileID: 7246078113118992351}
   m_Layer: 0
   m_Name: SueloSubida
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +284,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &7246078113118992351
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3744716212859607905}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.42933977, y: 1.0702558}
+      - {x: -2.4994512, y: -0.41267738}
+      - {x: -2.5002997, y: -1.4335117}
+      - {x: 1.4964478, y: -1.4277992}
+      - {x: 1.4986091, y: 1.066217}
 --- !u!1 &3744716212984258376
 GameObject:
   m_ObjectHideFlags: 0

@@ -900,9 +900,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2535865159202536332}
+  - component: {fileID: 5489220001369135117}
   m_Layer: 0
   m_Name: RampaSubterraneo
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,7 +916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2257765047819304425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.270979, y: -28.636627, z: 4.0703125}
+  m_LocalPosition: {x: 30.270979, y: -28.636627, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1310965434248079308}
@@ -965,6 +966,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &5489220001369135117
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257765047819304425}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 7.183302, y: 2.9737053}
+      - {x: 2.1879702, y: 0.5207765}
+      - {x: 2.18714, y: -0.02171123}
+      - {x: 2.2269301, y: -6.384678}
+      - {x: 7.1636534, y: -6.3924294}
 --- !u!1 &2346828792201566375
 GameObject:
   m_ObjectHideFlags: 0
