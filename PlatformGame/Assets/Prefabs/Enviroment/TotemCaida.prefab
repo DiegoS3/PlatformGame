@@ -171,9 +171,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5762417419255625554}
+  - component: {fileID: 8831059388913913876}
   m_Layer: 0
   m_Name: TotemCaida
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,6 +201,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &8831059388913913876
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212062873623596236}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.0602387, y: 3.6423485}
+      - {x: -1.0629537, y: 2.652195}
+      - {x: -2.0544076, y: 2.6496077}
+      - {x: -2.0591035, y: -0.3433341}
+      - {x: -2.9935253, y: -0.34827426}
+      - {x: -2.9926555, y: -1.3607781}
+      - {x: -1.995471, y: -1.3609827}
+      - {x: -1.9997447, y: -2.3556752}
+      - {x: -1.0533731, y: -2.3590817}
+      - {x: -1.0571318, y: -4.3988576}
+      - {x: 0.949141, y: -4.3988357}
+      - {x: 0.94267577, y: -2.3482218}
+      - {x: 1.9409375, y: -2.334757}
+      - {x: 1.945437, y: -1.3535838}
+      - {x: 2.9268196, y: -1.3460221}
+      - {x: 2.9280367, y: -0.35089076}
+      - {x: 1.9116421, y: -0.3438742}
+      - {x: 1.9132705, y: 2.6562028}
+      - {x: 0.94151586, y: 2.6533775}
+      - {x: 0.94450873, y: 3.6383598}
 --- !u!1 &2449742849320390152
 GameObject:
   m_ObjectHideFlags: 0
