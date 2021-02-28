@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 8831059388913913876}
   m_Layer: 0
   m_Name: TotemCaida
-  m_TagString: Trap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,7 @@ Transform:
   - {fileID: 6505709665189389873}
   - {fileID: 9145810852265313777}
   - {fileID: 485689647268481698}
+  - {fileID: 5958291725400948834}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -235,8 +236,8 @@ PolygonCollider2D:
       - {x: -1.995471, y: -1.3609827}
       - {x: -1.9997447, y: -2.3556752}
       - {x: -1.0533731, y: -2.3590817}
-      - {x: -1.0571318, y: -4.3988576}
-      - {x: 0.949141, y: -4.3988357}
+      - {x: -1.0515049, y: -4.323072}
+      - {x: 0.93069386, y: -4.323051}
       - {x: 0.94267577, y: -2.3482218}
       - {x: 1.9409375, y: -2.334757}
       - {x: 1.945437, y: -1.3535838}
@@ -651,6 +652,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7294243890433283041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5958291725400948834}
+  - component: {fileID: 5148808057515009674}
+  m_Layer: 0
+  m_Name: LineDeath
+  m_TagString: Trap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5958291725400948834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294243890433283041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.861, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5762417419255625554}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5148808057515009674
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294243890433283041}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06189716, y: -0.46141434}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8778126, y: 0.077171326}
+  m_EdgeRadius: 0
 --- !u!1 &7903436700260826663
 GameObject:
   m_ObjectHideFlags: 0
