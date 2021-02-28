@@ -8570,9 +8570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0d3111c1d2bf947be18137e3f240b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallDelay: 1
+  fallDelay: 2
   platform: {fileID: 696978634}
-  shakeMagnitude: 0.01
+  shakeMagnitude: 0.05
   startShakeTime: 1
 --- !u!1001 &718469198
 PrefabInstance:
@@ -25024,7 +25024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930514290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 139.04, y: -10.81, z: 0}
+  m_LocalPosition: {x: 75.7, y: -17.5, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -29255,7 +29255,7 @@ PrefabInstance:
     - target: {fileID: 8566030750996466859, guid: 512d15afb84ed08478582f5a59a9e394,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.95
+      value: 80.62
       objectReference: {fileID: 0}
     - target: {fileID: 8566030750996466859, guid: 512d15afb84ed08478582f5a59a9e394,
         type: 3}

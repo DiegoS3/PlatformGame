@@ -26,28 +26,28 @@ public class PlatformBekrable : MonoBehaviour
     void Update()
     {
         
-        if (shakeTime <= 0)
-        {            
-            shakeTime = startShakeTime;
-            while(shakeTime > 0)
-            {
-                InvokeRepeating("StartTotemShaking", 0f, 0.02f);
-                shakeTime -= Time.deltaTime;
-            }
-            shakeTime = startShakeTime;            
-        }
-        else
-        {
-            //StopTotemShaking();
-            shakeTime -= Time.deltaTime;
-        }
+        //if (shakeTime <= 0)
+        //{            
+        //    shakeTime = startShakeTime;
+        //    while(shakeTime > 0)
+        //    {
+        //        InvokeRepeating("StartTotemShaking", 0f, 0.02f);
+        //        shakeTime -= Time.deltaTime;
+        //    }
+        //    shakeTime = startShakeTime;            
+        //}
+        //else
+        //{
+        //    //StopTotemShaking();
+        //    shakeTime -= Time.deltaTime;
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StopTotemShaking();
+            InvokeRepeating("StartTotemShaking", 0f, 0.02f);
             StartCoroutine(PlatformFall());
         }
     }
@@ -55,6 +55,7 @@ public class PlatformBekrable : MonoBehaviour
     IEnumerator PlatformFall()
     {
         yield return new WaitForSeconds(fallDelay);
+        StopTotemShaking();
         rigidbody2D.isKinematic = false;
         GetComponent<Collider2D>().isTrigger = true;
         yield return 0;
