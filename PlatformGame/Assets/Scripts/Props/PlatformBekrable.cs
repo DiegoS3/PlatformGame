@@ -11,38 +11,15 @@ public class PlatformBekrable : MonoBehaviour
     public GameObject platform;
     private Vector3 totemPosOG;
     public float shakeMagnitude;
-    private float shakeTime;
-    public float startShakeTime;
 
     // Start is called before the first frame update
     void Start()
     {
         totemPosOG = platform.transform.position;
-        shakeTime = startShakeTime;
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        //if (shakeTime <= 0)
-        //{            
-        //    shakeTime = startShakeTime;
-        //    while(shakeTime > 0)
-        //    {
-        //        InvokeRepeating("StartTotemShaking", 0f, 0.02f);
-        //        shakeTime -= Time.deltaTime;
-        //    }
-        //    shakeTime = startShakeTime;            
-        //}
-        //else
-        //{
-        //    //StopTotemShaking();
-        //    shakeTime -= Time.deltaTime;
-        //}
-    }
-
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -58,6 +35,7 @@ public class PlatformBekrable : MonoBehaviour
         StopTotemShaking();
         rigidbody2D.isKinematic = false;
         GetComponent<Collider2D>().isTrigger = true;
+        Destroy(gameObject, 0.6f);
         yield return 0;
     }
 

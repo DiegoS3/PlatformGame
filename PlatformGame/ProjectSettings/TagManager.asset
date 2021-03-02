@@ -8,6 +8,8 @@ TagManager:
   - RigthWall
   - LeftWall
   - Trap
+  - Totem
+  - FireBall
   layers:
   - Default
   - TransparentFX
