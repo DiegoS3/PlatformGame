@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkeletonWalk
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1540590527562206909, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: -7445728037447846149, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 4792086390759421477, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: -3462787873181832886, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 45966500872709769, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 7013577002690406627, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: -2356003859601637949, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 2369481524001456022, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 7746255393700133122, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 4482783208499175354, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: -4988383733850832283, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: -2146757507701255462, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  - {fileID: 1513826763441915127, guid: 8948796f12d906b498847d12ea75e601, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Skeleton Walk_4
+  - Skeleton Walk_5
+  - Skeleton Walk_6
+  - Skeleton Walk_7
+  - Skeleton Walk_0
+  - Skeleton Walk_1
+  - Skeleton Walk_2
+  - Skeleton Walk_3
+  - Skeleton Walk_8
+  - Skeleton Walk_9
+  - Skeleton Walk_12
+  - Skeleton Walk_11
+  - Skeleton Walk_10
+  m_Tag: SkeletonWalk
+  m_IsVariant: 0

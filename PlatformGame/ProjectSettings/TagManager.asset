@@ -7,6 +7,9 @@ TagManager:
   - Suelo
   - RigthWall
   - LeftWall
+  - Death
+  - Trap
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Action
   - 
   - 
   - 
