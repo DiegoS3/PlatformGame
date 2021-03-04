@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Suelo
-  - RigthWall
-  - LeftWall
-<<<<<<< HEAD
-  - Trap
-  - Totem
-  - FireBall
-=======
-  - Death
-  - Trap
-  - Enemigo
->>>>>>> develop
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -25,13 +13,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
-  - DestroyerSpikedBall
-  - Trap
-=======
-  - Action
   - 
->>>>>>> develop
+  - 
   - 
   - 
   - 
