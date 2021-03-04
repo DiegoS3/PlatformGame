@@ -12,6 +12,7 @@ TagManager:
   - RigthWall
   - LeftWall
   - Death
+  - Cloud
   layers:
   - Default
   - TransparentFX
