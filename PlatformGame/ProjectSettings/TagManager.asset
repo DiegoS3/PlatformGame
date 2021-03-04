@@ -7,9 +7,15 @@ TagManager:
   - Suelo
   - RigthWall
   - LeftWall
+<<<<<<< HEAD
   - Trap
   - Totem
   - FireBall
+=======
+  - Death
+  - Trap
+  - Enemigo
+>>>>>>> develop
   layers:
   - Default
   - TransparentFX
@@ -19,8 +25,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - DestroyerSpikedBall
   - Trap
+=======
+  - Action
+  - 
+>>>>>>> develop
   - 
   - 
   - 

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
 
+    public int vidas = 5;
+    bool isdead = false;
+
     public float runSpeed = 2;
     public float jumpSpeed = 3;
 
@@ -25,12 +28,17 @@ public class Personaje : MonoBehaviour
     bool isTouchingRight;
     bool isTouchingLeft;
 
+    public GameObject espada;
+    public GameObject ataque_original;
+    public GameObject ataque_posicion;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        espada.SetActive(false);
+        Debug.Log("Daño: " + vidas);
         rb2D = GetComponent<Rigidbody2D>();
     }
 
@@ -63,6 +71,16 @@ public class Personaje : MonoBehaviour
         if (CheckGround.isGrounded)
         {
             animator.SetBool("Jump", false);
+        }
+
+        if (vidas <= 0)
+        {
+            isdead = true;
+        }
+
+        if (isdead)
+        {
+            animator.SetBool("Dead", true);
         }
 
 
@@ -118,12 +136,15 @@ public class Personaje : MonoBehaviour
 
         if (Input.GetKey("space"))
         {
+            espada.SetActive(true);
             animator.SetBool("Attack", true);
             animator.SetBool("Run", false);
+
         }
         else
         {
             animator.SetBool("Attack", false);
+            espada.SetActive(false);
         }
 
         if (isTouchingFront && !CheckGround.isGrounded)
@@ -135,6 +156,34 @@ public class Personaje : MonoBehaviour
             animator.SetBool("Falling", false);
         }
 
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemigo"))
+        {
+            vidas--;
+            Debug.Log("Daño: " + vidas);
+            animDanoPj();
+        }
+
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            vidas = 0;
+            Debug.Log("Daño mortal: " + vidas);
+            isdead = true;
+        }
+    }
+
+    private void animDanoPj()
+    {
+        animator.Play("PjDano");
+    }
+
+    private void animDeath()
+    {
+        animator.Play("PjDeath");
     }
 
 
