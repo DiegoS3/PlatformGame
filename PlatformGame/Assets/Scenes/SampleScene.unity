@@ -4353,7 +4353,7 @@ PrefabInstance:
     - target: {fileID: 770111366313042586, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.20964238
+      value: 0.21194151
       objectReference: {fileID: 0}
     - target: {fileID: 770111366313042586, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
@@ -4363,7 +4363,7 @@ PrefabInstance:
     - target: {fileID: 770111366313042586, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.0030035041
+      value: 0.0016199462
       objectReference: {fileID: 0}
     - target: {fileID: 770111366313042588, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
@@ -4382,18 +4382,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806784, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
-      propertyPath: betterJump
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 770111367205806784, guid: 7cc0554bbc702eb42bb939000160f2b0,
-        type: 3}
       propertyPath: tiempoSalto
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 770111367205806784, guid: 7cc0554bbc702eb42bb939000160f2b0,
-        type: 3}
-      propertyPath: tiempoAtaque
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
@@ -4403,20 +4393,12 @@ PrefabInstance:
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-      value: -4.52
-=======
-      value: 24.74
->>>>>>> FixingLevel1
+      value: 147.05
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
-      value: -2.78
-=======
-      value: -28.1
->>>>>>> FixingLevel1
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
@@ -7197,11 +7179,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3166986003522688800, guid: 6545312a4b3e78947a7d3b326197134a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 4495113126266454052, guid: 6545312a4b3e78947a7d3b326197134a,
         type: 3}
       propertyPath: m_Controller
@@ -7272,8 +7249,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7741296531692070283, guid: 6545312a4b3e78947a7d3b326197134a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6545312a4b3e78947a7d3b326197134a, type: 3}
 --- !u!1001 &578764416
 PrefabInstance:
@@ -26437,34 +26413,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3399218b6dae0fe4b98fcca020aff3f0, type: 3}
---- !u!1 &1953329719 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5970648746538011537, guid: 6545312a4b3e78947a7d3b326197134a,
-    type: 3}
-  m_PrefabInstance: {fileID: 577734611}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1953329722 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1621126421250846649, guid: 6545312a4b3e78947a7d3b326197134a,
-    type: 3}
-  m_PrefabInstance: {fileID: 577734611}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1953329723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953329719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ead26875ef23d4c84a549e63d25733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1953329722}
-  nuevoSprite: {fileID: -2305204071527019509, guid: 7810966f0f690954c87305933cabf2b0,
-    type: 3}
-  original: {fileID: 0}
 --- !u!1 &1965716829
 GameObject:
   m_ObjectHideFlags: 0

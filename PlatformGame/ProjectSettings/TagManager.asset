@@ -4,19 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemigo
   - Trap
+  - Cloud
+  - Death
   - Suelo
   - Totem
   - FireBall
   - RigthWall
-  - LeftWall
-  - Death
-<<<<<<< HEAD
+  - Enemigo
   - Cofre
-=======
-  - Cloud
->>>>>>> FixingLevel1
+  - LeftWall
   layers:
   - Default
   - TransparentFX
