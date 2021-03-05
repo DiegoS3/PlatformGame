@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-0.3522019684314728,"y":-3.669781446456909,"z":0.59423828125},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":3.1581945419311525,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":45.748748779296878,"y":-23.340347290039064,"z":-40.35918426513672},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":16.430112838745118,"orthographic":true}
+>>>>>>> FixingLevel1

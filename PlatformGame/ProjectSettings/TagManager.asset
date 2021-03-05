@@ -12,7 +12,11 @@ TagManager:
   - RigthWall
   - LeftWall
   - Death
+<<<<<<< HEAD
   - Cofre
+=======
+  - Cloud
+>>>>>>> FixingLevel1
   layers:
   - Default
   - TransparentFX
@@ -23,7 +27,7 @@ TagManager:
   - 
   - 
   - Action
-  - 
+  - Destroyer
   - 
   - 
   - 

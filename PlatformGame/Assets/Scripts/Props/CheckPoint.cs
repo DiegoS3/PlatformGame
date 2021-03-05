@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    public GameObject checkpointOn;
-    public GameObject checkpointOff;
+    public GameObject checkpoint;
+    //public GameObject checkpointOff;
+    public SpriteRenderer ckp;
+    public Sprite ckpOn;
 
     // Start is called before the first frame update
     void Start()
@@ -13,9 +15,11 @@ public class CheckPoint : MonoBehaviour
         PlayerPrefs.DeleteAll();
         if (PlayerPrefs.GetFloat("posX") != 0)
         {
-            if (checkpointOff.transform.position.x == PlayerPrefs.GetFloat("posX"))
+            if (checkpoint.transform.position.x == PlayerPrefs.GetFloat("posX"))
             {
-                Instantiate(checkpointOn, transform.position, transform.rotation);
+                //Instantiate(checkpointOn, transform.position, transform.rotation);
+                //ckp.size = new Vector3(0.62343f, 0.62343f, 0.62343f);
+                ckp.sprite = ckpOn;
             }
         }
     }
@@ -24,7 +28,8 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerRespawn>().ReachedCheckPoint(transform.position.x, transform.position.y);
+            //collision.GetComponent<PlayerRespawn>().ReachedCheckPoint(transform.position.x, transform.position.y);
+            ckp.sprite = ckpOn;
             //checkpointOn.transform.localScale = checkpointOff.transform.localScale;
             //Instantiate(checkpointOn, transform.position, transform.rotation);
             //DestroyImmediate(checkpointOff, true);

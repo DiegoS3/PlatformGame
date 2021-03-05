@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 226523978045037018}
   - component: {fileID: 7200774558561465652}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TX Village Props_76
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1498160736764048393}
   - component: {fileID: 8858738877351098760}
   - component: {fileID: 3763563992384381739}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SpikedBall
   m_TagString: Trap
   m_Icon: {fileID: 0}
