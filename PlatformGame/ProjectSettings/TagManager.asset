@@ -12,6 +12,7 @@ TagManager:
   - RigthWall
   - LeftWall
   - Death
+  - Cofre
   layers:
   - Default
   - TransparentFX

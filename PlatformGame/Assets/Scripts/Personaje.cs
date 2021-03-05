@@ -32,11 +32,17 @@ public class Personaje : MonoBehaviour
     public GameObject ataque_original;
     public GameObject ataque_posicion;
 
+    public bool atacando;
+    public float tiempoAtaque = 0.5f;
+    public bool puedeSaltar;
+    public float tiempoSalto = 0.5f;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        puedeSaltar = true;
+        atacando = false;
         espada.SetActive(false);
         Debug.Log("Daño: " + vidas);
         rb2D = GetComponent<Rigidbody2D>();
@@ -81,6 +87,7 @@ public class Personaje : MonoBehaviour
         if (isdead)
         {
             animator.SetBool("Dead", true);
+            runSpeed = 0;
         }
 
 
@@ -109,16 +116,18 @@ public class Personaje : MonoBehaviour
         }
         if (Input.GetKey("w") && CheckGround.isGrounded && !wallSliding)
         {
-            
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
-            
-            
+            if (puedeSaltar)
+            {
+                rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+                puedeSaltar = false;
+                Invoke("dejarDeSaltar", tiempoSalto);
+            }
         }
 
-        if (Input.GetKey("w") && wallSliding)
-        {
-            rb2D.velocity = new Vector3(-rb2D.velocity.x, jumpSpeed, rb2D.velocity.y);
-        }
+        //if (Input.GetKey("w") && wallSliding)
+        //{
+        //    rb2D.velocity = new Vector3(-rb2D.velocity.x, jumpSpeed, rb2D.velocity.y);
+        //}
 
        
 
@@ -126,7 +135,7 @@ public class Personaje : MonoBehaviour
         {
             if (rb2D.velocity.y < 0)
             {
-                rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;
+                rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;  
             }
             if (rb2D.velocity.y > 0 && !Input.GetKey("w"))
             {
@@ -136,15 +145,13 @@ public class Personaje : MonoBehaviour
 
         if (Input.GetKey("space"))
         {
-            espada.SetActive(true);
-            animator.SetBool("Attack", true);
-            animator.SetBool("Run", false);
-
+                animator.SetBool("Attack", true);
+                espada.SetActive(true);
+                Invoke("dejarDeAtacar", tiempoAtaque);
         }
         else
         {
-            animator.SetBool("Attack", false);
-            espada.SetActive(false);
+            
         }
 
         if (isTouchingFront && !CheckGround.isGrounded)
@@ -157,6 +164,21 @@ public class Personaje : MonoBehaviour
         }
 
     }
+
+
+    private void dejarDeSaltar()
+    {
+        puedeSaltar = true;
+    }
+
+    private void dejarDeAtacar()
+    {
+        atacando = false;
+        animator.SetBool("Attack", false);
+        espada.SetActive(false);
+    }
+
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
