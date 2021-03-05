@@ -31,4 +31,13 @@ public class Cloud : MonoBehaviour
         CancelInvoke("MoveCloud");
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Cloud"))
+        {
+            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject, 0.2f);
+        }
+    }
+
 }
