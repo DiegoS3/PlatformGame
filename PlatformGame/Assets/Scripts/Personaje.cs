@@ -5,7 +5,7 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
 
-    public int vidas = 5;
+    public static int vidas = 5;
     bool isdead = false;
 
     public float runSpeed = 2;
@@ -36,6 +36,8 @@ public class Personaje : MonoBehaviour
     public float tiempoAtaque = 0.5f;
     public bool puedeSaltar;
     public float tiempoSalto = 0.5f;
+
+    public GameObject spawnInit;
 
 
     // Start is called before the first frame update
@@ -90,8 +92,6 @@ public class Personaje : MonoBehaviour
             runSpeed = 0;
         }
 
-
-
     }
 
     // Update is called once per frame
@@ -124,10 +124,17 @@ public class Personaje : MonoBehaviour
             }
         }
 
-        //if (Input.GetKey("w") && wallSliding)
-        //{
-        //    rb2D.velocity = new Vector3(-rb2D.velocity.x, jumpSpeed, rb2D.velocity.y);
-        //}
+        if (isdead)
+        {
+            if (PlayerPrefs.GetFloat("posX") != 0)
+            {
+                transform.position = new Vector2(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"));
+            }
+            else
+            {
+                transform.position = spawnInit.transform.position;
+            }
+        }
 
        
 
@@ -196,6 +203,7 @@ public class Personaje : MonoBehaviour
             Debug.Log("Daño mortal: " + vidas);
             isdead = true;
         }
+
     }
 
     private void animDanoPj()

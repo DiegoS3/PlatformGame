@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6773028000147206477}
   - component: {fileID: 6773028000147206478}
+  - component: {fileID: 5850565135323938728}
+  - component: {fileID: 1840266991485332420}
   m_Layer: 0
   m_Name: Campfire
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +85,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5850565135323938728
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773028000147206479}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0135753155, y: 0.1532073}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.90625, y: 0.71875}
+    newSize: {x: 1.90625, y: 0.71875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2599034, y: 1.0251646}
+  m_EdgeRadius: 0
+--- !u!114 &1840266991485332420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773028000147206479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2aa69dbcce30346b8461a263f618dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps:
+  - {fileID: 2709160790985752157}
+  - {fileID: 2708958977137662387}
+  - {fileID: 2708950753730262541}
+  fadeOutTime: 3
 --- !u!1001 &2835388541533411583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,11 +191,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 199729817172150936, guid: 2b206c0d2afb3604183d9210be1d84ce,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199741515516788914, guid: 2b206c0d2afb3604183d9210be1d84ce,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199841942303513152, guid: 2b206c0d2afb3604183d9210be1d84ce,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b206c0d2afb3604183d9210be1d84ce, type: 3}
 --- !u!4 &2834614110778310599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4433612297463608, guid: 2b206c0d2afb3604183d9210be1d84ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 2835388541533411583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2709160790985752157 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198595686844917410, guid: 2b206c0d2afb3604183d9210be1d84ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 2835388541533411583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2708950753730262541 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198565755821862642, guid: 2b206c0d2afb3604183d9210be1d84ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 2835388541533411583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2708958977137662387 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198568558973321548, guid: 2b206c0d2afb3604183d9210be1d84ce,
     type: 3}
   m_PrefabInstance: {fileID: 2835388541533411583}
   m_PrefabAsset: {fileID: 0}

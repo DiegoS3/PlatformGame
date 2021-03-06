@@ -9,6 +9,7 @@ public class Cofre : MonoBehaviour
 
     public Sprite nuevoSprite;
     public Sprite original;
+    
 
     private void Start()
     {

@@ -10,6 +10,7 @@ public class AIEnemy : MonoBehaviour
     public Transform player;
     public float agroRange;
     public float moveSpeed;
+    public float moveSpeed_og;
     public Rigidbody2D rg2D;
     public Transform castPoint;
     public bool isEnemyLeft;
@@ -21,11 +22,13 @@ public class AIEnemy : MonoBehaviour
     public float startWaitTime = 2;
     private int i = 0;
     private Vector2 actualPos;
+    public GameObject hacha;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed_og = moveSpeed;
         rg2D = GetComponent<Rigidbody2D>();
         enemyAnim = enemy.GetComponent<Animator>();
     }
@@ -145,16 +148,32 @@ public class AIEnemy : MonoBehaviour
 
             if (hit.collider.CompareTag("Player"))
             {
-                Debug.Log("Player dado con rayCast");
+                Invoke("Atacar", 0.5f);
                 val = true;
             }
+           
         }
         else
         {
             Debug.DrawLine(castPoint.position, endPos, Color.blue);
+            enemyAnim.SetBool("Attack", false);
+            moveSpeed = moveSpeed_og;
+            hacha.SetActive(false);
         }
 
         return val;
+    }
+
+    private void Atacar()
+    {
+        enemyAnim.SetBool("Attack", true);
+        moveSpeed = 0f;
+        Invoke("hachaActiva",0.6f);
+    }
+
+    private void hachaActiva()
+    {
+        hacha.SetActive(true);
     }
 
     IEnumerator CheckEnemyMoving()
@@ -187,4 +206,5 @@ public class AIEnemy : MonoBehaviour
         }
 
     }
+
 }

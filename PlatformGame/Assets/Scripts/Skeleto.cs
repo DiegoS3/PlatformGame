@@ -15,6 +15,7 @@ public class Skeleto : MonoBehaviour
 
     private void Start()
     {
+        hacha.SetActive(false);
         actualCoolDownAttack = 0;
         hacha.SetActive(false);
     }

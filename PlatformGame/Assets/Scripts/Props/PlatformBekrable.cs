@@ -34,6 +34,7 @@ public class PlatformBekrable : MonoBehaviour
         yield return new WaitForSeconds(fallDelay);
         StopTotemShaking();
         rigidbody2D.isKinematic = false;
+        new WaitForSeconds(0.5f);
         GetComponent<Collider2D>().isTrigger = true;
         Destroy(gameObject, 0.6f);
         yield return 0;
