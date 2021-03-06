@@ -4423,6 +4423,11 @@ PrefabInstance:
       objectReference: {fileID: 2065467518}
     - target: {fileID: 770111367205806784, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
+      propertyPath: timeInAir
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 770111367205806784, guid: 7cc0554bbc702eb42bb939000160f2b0,
+        type: 3}
       propertyPath: betterJump
       value: 1
       objectReference: {fileID: 0}
@@ -4439,12 +4444,12 @@ PrefabInstance:
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 230.8
+      value: 12.7
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.92
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}

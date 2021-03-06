@@ -39,6 +39,8 @@ public class Personaje : MonoBehaviour
 
     public GameObject spawnInit;
 
+    public float timeInAir = 1.7f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +93,38 @@ public class Personaje : MonoBehaviour
             animator.SetBool("Dead", true);
             runSpeed = 0;
         }
+
+        //Here we decrease the time in air from 5
+        //Grounded is used by Rigidbody controller
+        if (!CheckGround.isGrounded && !wallSliding)
+        {
+            timeInAir -= Time.deltaTime;
+        }
+            
+
+
+        //Increase the time in air to reach 5 each time we're on ground
+        if ((CheckGround.isGrounded || wallSliding) && timeInAir < 1.7f && timeInAir > 0)
+        {
+            timeInAir = 1.7f;
+        }
+            
+
+        //Making the player die when it reaches 0
+        if (timeInAir <= 0 && CheckGround.isGrounded)
+        {
+            isdead = true;
+            Debug.Log("You Died!" + isdead);
+        }
+            
+
+        //Or just damage player on a "checkpoint", in this case I use 3
+        if (timeInAir == 1f && CheckGround.isGrounded)
+        {
+            vidas--;
+        }
+            
+
 
     }
 
