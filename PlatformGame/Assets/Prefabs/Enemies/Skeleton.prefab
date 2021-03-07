@@ -44,9 +44,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09340307, y: 0.04055009}
+  m_Offset: {x: 0.1035314, y: 0.0429307}
   serializedVersion: 2
-  m_Radius: 0.17735556
+  m_Radius: 0.1851465
 --- !u!1 &1779519036745101387
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 1779519037423832897}
   - component: {fileID: 1779519037423832898}
   - component: {fileID: 1779519037423832899}
-  - component: {fileID: 1779519037423832901}
   - component: {fileID: 1779519037423832900}
   m_Layer: 0
   m_Name: Skeleton
@@ -265,20 +264,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1779519037423832901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779519037423832924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3a87734eabcf4948b7c012b36e45605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceRaycast: 1
-  hacha: {fileID: 1779519036396294691}
 --- !u!114 &1779519037423832900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,11 +278,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1779519037423832924}
   enemyAnim: {fileID: 1779519037423832897}
-  player: {fileID: 0}
+  player: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0, type: 3}
   agroRange: 2
   moveSpeed: 2
-  moveSpeed_og: 0
-  rg2D: {fileID: 0}
   castPoint: {fileID: 1779519037612827380}
   isEnemyLeft: 0
   moveSpots:

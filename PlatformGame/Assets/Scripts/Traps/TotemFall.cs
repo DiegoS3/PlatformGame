@@ -19,6 +19,7 @@ public class TotemFall : MonoBehaviour
     private Vector3 totemPosOG;
     public float shakeMagnitude;
     public float shakeTime;
+    public Collider2D lineDeath;
 
 
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class TotemFall : MonoBehaviour
         if (patrols[i] == patrols[patrols.Length - 1])
         {
             startWaitTime = waitOnAir;
-            speed = speedOnGround;            
+            speed = speedOnGround;
         }
         else
         {
@@ -61,12 +62,13 @@ public class TotemFall : MonoBehaviour
                 {
                     i = 0;
                 }
-
+                lineDeath.enabled = false;
                 waitTime = startWaitTime;
             }
             else
             {
                 moving = false;
+                lineDeath.enabled = true;
                 waitTime -= Time.deltaTime;
 
             }

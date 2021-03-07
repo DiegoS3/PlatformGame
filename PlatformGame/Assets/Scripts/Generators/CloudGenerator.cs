@@ -8,7 +8,7 @@ public class CloudGenerator : MonoBehaviour
     public float spawnInterval;
     public GameObject endPoint;
     private Vector3 startPos;
-
+    public int a;
 
 
     // Start is called before the first frame update
@@ -21,14 +21,17 @@ public class CloudGenerator : MonoBehaviour
 
     private void SpawnCloud(Vector3 startPos)
     {
-        int rand = Random.Range(0, clouds.Length-1);
+        int rand = Random.Range(0, clouds.Length);
+        a = rand;
         GameObject cloud = Instantiate(clouds[rand]);
 
-        float startY = Random.Range(startPos.y - 1f, startPos.y +1f);
+        float startY = Random.Range(startPos.y - 2f, startPos.y +1f);
         cloud.transform.position = new Vector3(startPos.x, startY, startPos.z);
-        float scala = Random.Range(0.8f, 1.2f);
+
+        float scala = Random.Range(0.6f, 1.2f);
         cloud.transform.localScale = new Vector2(scala, scala);
-        float speed = Random.Range(0.5f, 1.5f);
+
+        float speed = Random.Range(0.3f, 1.5f);
         cloud.GetComponent<Cloud>().StartFloating(speed, endPoint.transform.position.x);
     }
 
@@ -42,7 +45,7 @@ public class CloudGenerator : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            Vector3 spawnPos = startPos + Vector3.right * (i-5*3);
+            Vector3 spawnPos = startPos + Vector3.right * (i - 5 * 3);
             SpawnCloud(spawnPos);
         }
     }
