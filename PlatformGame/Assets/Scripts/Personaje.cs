@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Personaje : MonoBehaviour
 {
 
     public static int vidas = 5;
+    public static int monedas;
     bool isdead = false;
 
     public float runSpeed = 2;
@@ -40,16 +43,24 @@ public class Personaje : MonoBehaviour
     public GameObject spawnInit;
 
     public float timeInAir = 1.7f;
+    public Vector3 posRespawn;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        monedas = 0;
         puedeSaltar = true;
         atacando = false;
         espada.SetActive(false);
         Debug.Log("Daño: " + vidas);
         rb2D = GetComponent<Rigidbody2D>();
+        posRespawn = spawnInit.transform.position;
+        transform.position = posRespawn;
+
+        animator.SetBool("Fall", false);
+        animator.SetBool("Jump", false);
     }
 
     private void Update()
@@ -92,15 +103,24 @@ public class Personaje : MonoBehaviour
         {
             animator.SetBool("Dead", true);
             runSpeed = 0;
+            Invoke("ReSpawnPlayer", 2f);
+            //ReSpawnPlayer();
+            //resetPlayer();
+
         }
 
+        dmgFall();
+    }
+
+    private void dmgFall()
+    {
         //Here we decrease the time in air from 5
         //Grounded is used by Rigidbody controller
         if (!CheckGround.isGrounded && !wallSliding)
         {
             timeInAir -= Time.deltaTime;
         }
-            
+
 
 
         //Increase the time in air to reach 5 each time we're on ground
@@ -108,7 +128,7 @@ public class Personaje : MonoBehaviour
         {
             timeInAir = 1.7f;
         }
-            
+
 
         //Making the player die when it reaches 0
         if (timeInAir <= 0 && CheckGround.isGrounded)
@@ -116,16 +136,24 @@ public class Personaje : MonoBehaviour
             isdead = true;
             Debug.Log("You Died!" + isdead);
         }
-            
+
 
         //Or just damage player on a "checkpoint", in this case I use 3
         if (timeInAir == 1f && CheckGround.isGrounded)
         {
             vidas--;
         }
-            
+    }
 
 
+    private void resetPlayer()
+    {
+        timeInAir = 1.7f;
+        runSpeed = 4f;
+        vidas = 5;
+        monedas = 0;
+        animator.SetBool("Dead", false);
+        
     }
 
     // Update is called once per frame
@@ -157,19 +185,6 @@ public class Personaje : MonoBehaviour
                 Invoke("dejarDeSaltar", tiempoSalto);
             }
         }
-
-        if (isdead)
-        {
-            if (PlayerPrefs.GetFloat("posX") != 0)
-            {
-                transform.position = new Vector2(PlayerPrefs.GetFloat("posX"), PlayerPrefs.GetFloat("posY"));
-            }
-            else
-            {
-                transform.position = spawnInit.transform.position;
-            }
-        }
-
        
 
         if (betterJump && !wallSliding)
@@ -203,6 +218,15 @@ public class Personaje : MonoBehaviour
         {
             animator.SetBool("Falling", false);
         }
+
+    }
+
+    private void ReSpawnPlayer()
+    {
+        transform.position = posRespawn;
+        isdead = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        resetPlayer();
 
     }
 
@@ -243,11 +267,6 @@ public class Personaje : MonoBehaviour
     private void animDanoPj()
     {
         animator.Play("PjDano");
-    }
-
-    private void animDeath()
-    {
-        animator.Play("PjDeath");
     }
 
 

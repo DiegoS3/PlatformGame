@@ -252,8 +252,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7154565783023684551}
-  - component: {fileID: 1558136611716789}
   - component: {fileID: 5597476260108778139}
+  - component: {fileID: 3424874836070880479}
   m_Layer: 0
   m_Name: BgClouds_2
   m_TagString: Cloud
@@ -270,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 7032190739289195938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.80420387, y: 0.80420387, z: 0}
+  m_LocalScale: {x: 0.7959355, y: 0.7959355, z: 0}
   m_Children:
   - {fileID: 7282144073800803494}
   - {fileID: 111356135978579559}
@@ -280,20 +280,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558136611716789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7032190739289195938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbc3059c56d48a142b99d6ad4d48c7e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloud: {fileID: 7032190739289195938}
-  speed: 0.3
 --- !u!61 &5597476260108778139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -320,6 +306,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20.592205, y: 5.78765}
   m_EdgeRadius: 0
+--- !u!114 &3424874836070880479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032190739289195938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc3059c56d48a142b99d6ad4d48c7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7312558138097159420
 GameObject:
   m_ObjectHideFlags: 0

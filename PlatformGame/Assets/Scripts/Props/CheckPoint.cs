@@ -8,19 +8,15 @@ public class CheckPoint : MonoBehaviour
     //public GameObject checkpointOff;
     public SpriteRenderer ckp;
     public Sprite ckpOn;
+    private Vector3 posPj;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
-        if (PlayerPrefs.GetFloat("posX") != 0)
+        posPj = FindObjectOfType<Personaje>().posRespawn;
+        if (posPj == transform.position)
         {
-            if (checkpoint.transform.position.x == PlayerPrefs.GetFloat("posX"))
-            {
-                //Instantiate(checkpointOn, transform.position, transform.rotation);
-                //ckp.size = new Vector3(0.62343f, 0.62343f, 0.62343f);
-                ckp.sprite = ckpOn;
-            }
+            ckp.sprite = ckpOn;
         }
     }
 
@@ -28,11 +24,9 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //collision.GetComponent<PlayerRespawn>().ReachedCheckPoint(transform.position.x, transform.position.y);
+            FindObjectOfType<Personaje>().posRespawn = new Vector3(transform.position.x +2, transform.position.y, transform.position.z);
             ckp.sprite = ckpOn;
-            //checkpointOn.transform.localScale = checkpointOff.transform.localScale;
-            //Instantiate(checkpointOn, transform.position, transform.rotation);
-            //DestroyImmediate(checkpointOff, true);
+            
         }
     }
 }
