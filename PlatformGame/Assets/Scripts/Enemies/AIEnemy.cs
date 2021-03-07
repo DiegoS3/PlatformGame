@@ -24,6 +24,8 @@ public class AIEnemy : MonoBehaviour
     private Vector2 actualPos;
     public GameObject hacha;
     private bool vivo;
+    private bool isDead;
+    private Collider2D col;
 
 
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class AIEnemy : MonoBehaviour
     {
         moveSpeed_og = moveSpeed;
         rg2D = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
         vivo = true;
         //enemyAnim = transform.gameObject.GetComponent<Animator>();
     }
@@ -76,7 +79,7 @@ public class AIEnemy : MonoBehaviour
 
         if (Vector2.Distance(transform.position, moveSpots[i].transform.position) < 0.2f)
         {
-            if (waitTime <= 0 && !Espada.isDead)
+            if (waitTime <= 0 && !isDead)
             {
                 if (moveSpots[i] != moveSpots[moveSpots.Length - 1])
                 {
@@ -101,10 +104,14 @@ public class AIEnemy : MonoBehaviour
 
     private void StopChasingPlayer()
     {
-        rg2D.velocity = new Vector2(0, 0);
-        isAgro = false;
-        isSearching = false;
-        //CheckPosition();
+        if (!isDead)
+        {
+            rg2D.velocity = new Vector2(0, 0);
+            isAgro = false;
+            isSearching = false;
+            //CheckPosition();
+        }
+
     }
 
     private void CheckPosition()
@@ -174,12 +181,19 @@ public class AIEnemy : MonoBehaviour
     {
         enemyAnim.SetBool("Attack", true);
         moveSpeed = 0f;
-        Invoke("hachaActiva",0.6f);
+        if (!isDead)
+        {
+            Invoke("hachaActiva", 0.1f);
+        }
+        
     }
 
     private void hachaActiva()
     {
-        hacha.SetActive(true);
+        if (!isDead)
+        {
+            hacha.SetActive(true);
+        }
     }
 
     IEnumerator CheckEnemyMoving()
@@ -202,15 +216,30 @@ public class AIEnemy : MonoBehaviour
             enemyAnim.SetBool("Idle", false);
             
         }
-        if (Espada.isDead)
+        
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Espada"))
         {
-            //moveSpeed = 0f;
+            isDead = true;
             vivo = false;
-            Debug.Log("Die");
-            //enemy.gameObject.tag = "Untagged";            
             enemyAnim.SetBool("Die", true);
-            //new WaitForSeconds(0.5f);
+            col.enabled = false;
             
+
+            //No permitir al character moverse mientras este la anima de damage
+            if (!this.enemyAnim.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+            {
+                Destroy(hacha);
+                Destroy(rg2D);
+                transform.position = new Vector2(transform.position.x, transform.position.y - 0.7f);
+                
+            }
+
+
         }
 
     }

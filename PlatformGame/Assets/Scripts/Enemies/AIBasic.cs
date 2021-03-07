@@ -15,6 +15,7 @@ public class AIBasic : MonoBehaviour
     public bool isSke = false;
     public static bool right = true;
     private Collider2D col;
+    private bool isDead;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class AIBasic : MonoBehaviour
 
         if (Vector2.Distance(transform.position, moveSpots[i].transform.position) < 0.2f)
         {
-            if (waitTime <= 0 && !Espada.isDead)
+            if (waitTime <= 0 && !isDead)
             {
                 if (moveSpots[i] != moveSpots[moveSpots.Length-1])
                 {
@@ -90,7 +91,7 @@ public class AIBasic : MonoBehaviour
         {
             animator.SetBool("Idle", true);
         }
-        if (Espada.isDead)
+        if (isDead)
         {
             speed = 0;
             col.enabled = false;
@@ -98,5 +99,14 @@ public class AIBasic : MonoBehaviour
             //new WaitForSeconds(0.3f);
             animator.SetBool("Die", true);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Espada"))
+        {
+            isDead = true;
+        }
+
     }
 }

@@ -49,16 +49,23 @@ public class Personaje : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("x"))
+        {
+            Vector3 newPos = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
+            transform.position = newPos;
+        }
+        else
+        {
+            posRespawn = spawnInit.transform.position;
+            transform.position = posRespawn;
+        }
+
         monedas = 0;
         puedeSaltar = true;
         atacando = false;
         espada.SetActive(false);
         Debug.Log("Daño: " + vidas);
         rb2D = GetComponent<Rigidbody2D>();
-        posRespawn = spawnInit.transform.position;
-        transform.position = posRespawn;
-
         animator.SetBool("Fall", false);
         animator.SetBool("Jump", false);
     }
@@ -224,9 +231,9 @@ public class Personaje : MonoBehaviour
 
     private void ReSpawnPlayer()
     {
-        transform.position = posRespawn;
-        isdead = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //transform.position = new Vector3(posRespawn.x, posRespawn.y, posRespawn.z);
+        isdead = false;
         resetPlayer();
 
     }

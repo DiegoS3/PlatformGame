@@ -12,15 +12,14 @@ public class Espada : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            isDead = true;
-            Destroy(collision.gameObject, 1.1f);
-            Debug.Log("Enemigo atacado "+ isDead.ToString());
+            //Destroy(collision.gameObject, 1.1f);
+            //Debug.Log("Enemigo atacado "+ isDead.ToString());
         }
         
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isDead = false;
+        //isDead = false;
     }
 }

@@ -9,11 +9,12 @@ public class FireBall : MonoBehaviour
     public Transform[] patrols;
     private int i = 0;
     public GameObject fireball;
+    private Collider2D col;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        col = transform.gameObject.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -37,5 +38,17 @@ public class FireBall : MonoBehaviour
             }
 
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            col.enabled = false;
+            Debug.Log("FireBall pegango");
+            Personaje.vidas--;
+            Debug.Log(Personaje.vidas);
+        }
+        
     }
 }

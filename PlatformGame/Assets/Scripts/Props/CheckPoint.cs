@@ -13,7 +13,10 @@ public class CheckPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        posPj = FindObjectOfType<Personaje>().posRespawn;
+        if (PlayerPrefs.HasKey("x"))
+        {
+            posPj = new Vector3(PlayerPrefs.GetFloat("x")-2, PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
+        }
         if (posPj == transform.position)
         {
             ckp.sprite = ckpOn;
@@ -24,7 +27,10 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            FindObjectOfType<Personaje>().posRespawn = new Vector3(transform.position.x +2, transform.position.y, transform.position.z);
+            //FindObjectOfType<Personaje>().posRespawn = new Vector3(transform.position.x +2, transform.position.y, transform.position.z);
+            PlayerPrefs.SetFloat("x", transform.position.x + 2);
+            PlayerPrefs.SetFloat("y", transform.position.y);
+            PlayerPrefs.SetFloat("z", transform.position.z);
             ckp.sprite = ckpOn;
             
         }
