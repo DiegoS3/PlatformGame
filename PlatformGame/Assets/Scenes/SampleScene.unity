@@ -1019,6 +1019,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Espada
       objectReference: {fileID: 0}
+    - target: {fileID: 770111366313042588, guid: 7cc0554bbc702eb42bb939000160f2b0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 770111367205806784, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: spawnInit
@@ -1032,12 +1037,12 @@ PrefabInstance:
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 353.1
+      value: 19.99
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.1
+      value: -12.19
       objectReference: {fileID: 0}
     - target: {fileID: 770111367205806786, guid: 7cc0554bbc702eb42bb939000160f2b0,
         type: 3}
